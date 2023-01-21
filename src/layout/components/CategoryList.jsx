@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { BsPlusCircle } from "react-icons/bs";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import { changeCategory } from "../../redux/video/videoSlice";
 
-const CategoryList = ({
-  category,
-  selectedCategory,
-  title,
-  subscriptions,
-  home,
-}) => {
+const CategoryList = ({ category, title, subscriptions, home }) => {
   const [isShowMore, setIsShowMore] = useState(false);
+
+  const dispatch = useDispatch();
+  const { selectedCategory } = useSelector(
+    (state) => state.video.selectedCategory
+  );
   const listClasses =
     "flex items-center space-x-5 py-2 px-3 rounded-lg hover:bg-[#272727] cursor-pointer";
   return (
@@ -24,6 +25,7 @@ const CategoryList = ({
                 ? "bg-[#272727] hover:bg-[#3d3d3d]"
                 : ""
             }`}
+            onClick={() => dispatch(changeCategory(item.name))}
           >
             {subscriptions ? (
               <div className="w-6 h-6 rounded-full bg-[#202020]" />
@@ -40,6 +42,7 @@ const CategoryList = ({
                 ? "bg-[#272727] hover:bg-[#3d3d3d]"
                 : ""
             }`}
+            onClick={() => dispatch(changeCategory(item.name))}
           >
             <BsPlusCircle size={20} />
             <p className="text-sm">Browse Channels</p>

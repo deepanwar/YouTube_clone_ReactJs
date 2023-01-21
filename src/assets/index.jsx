@@ -17,6 +17,8 @@ function Icon({ props: { size, className }, child }) {
   );
 }
 
+export { default as demoVideo } from "./demoVideo.png";
+
 export function DeleteSvg(props) {
   return Icon({
     child: [
