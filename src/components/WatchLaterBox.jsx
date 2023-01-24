@@ -6,7 +6,7 @@ const WatchLaterBox = () => {
   const [isAdded, setIsAdded] = useState(false);
   return (
     <div
-      className="flex group/watch p-1 rounded bg-neutral-900 items-center"
+      className="flex group/watch p-1 rounded bg-neutral-900/80 items-center"
       onClick={(e) => {
         e.stopPropagation();
         setIsAdded(!isAdded);

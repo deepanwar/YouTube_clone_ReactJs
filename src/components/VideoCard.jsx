@@ -48,7 +48,6 @@ const VideoCard = ({ videoData: { snippet }, flex, imgWidth }) => {
           </h2>
           <div className="text-xs text-neutral-400 inline-flex cursor-pointer">
             <p className="hover:text-white">
-              {" "}
               {snippet?.channelTitle || "Channel Name"}
             </p>
             <IoIosCheckmarkCircle size={15} className="ml-1 shrink-0" />

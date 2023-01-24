@@ -1,15 +1,25 @@
-import React from "react";
-import { IconButton } from "../components";
-import { demoSq } from "../utils/constant";
-import { RiShareForwardLine } from "react-icons/ri";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+// icons/image
 import { DotsSvg } from "../assets";
-import { AiOutlineDislike, AiOutlineLike } from "react-icons/ai";
+import { demoSq } from "../utils/constant";
+import { AiOutlineLike } from "react-icons/ai";
+import { RiShareForwardLine } from "react-icons/ri";
+// components
+import { IconButton } from "../components";
 import CommentSection from "../components/CommentSection";
 import VideoCard from "../components/VideoCard";
+// other
+import { setIsSideBarOpen } from "../redux/utils/utilsSlice";
 
 const videos = new Array(24).fill("mohan");
 
 const VideoDetails = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setIsSideBarOpen(false));
+  }, []);
   return (
     <div className="flex flex-col lg:flex-row flex-1 max-w-[1300px] mx-auto">
       {/* video side */}
@@ -70,12 +80,11 @@ const VideoDetails = () => {
 
       {/* right side bar */}
       <div className="w-[400px] py-4">
-      <div className="space-y-3">
-         {videos?.map((video, i) => (
-          <VideoCard videoData={video} key={i} flex imgWidth="168px" />
-        ))}
-      </div>
-       
+        <div className="space-y-3">
+          {videos?.map((video, i) => (
+            <VideoCard videoData={video} key={i} flex imgWidth="168px" />
+          ))}
+        </div>
       </div>
     </div>
   );

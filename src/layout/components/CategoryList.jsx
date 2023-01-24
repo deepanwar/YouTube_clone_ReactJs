@@ -8,9 +8,7 @@ const CategoryList = ({ category, title, subscriptions, home }) => {
   const [isShowMore, setIsShowMore] = useState(false);
 
   const dispatch = useDispatch();
-  const { selectedCategory } = useSelector(
-    (state) => state.video.selectedCategory
-  );
+  const { selectedCategory } = useSelector((state) => state.video);
   const listClasses =
     "flex items-center space-x-5 py-2 px-3 rounded-lg hover:bg-[#272727] cursor-pointer";
   return (

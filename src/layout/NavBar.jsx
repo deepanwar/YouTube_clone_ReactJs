@@ -1,15 +1,18 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { DotsSvg, MenuSvg, MicSvg, UserSvg } from "../assets";
 import youtubeLogoSvg from "../assets/youtubeLogoSvg.svg";
 import { IconButton, SearchInput } from "../components";
+import { setIsSideBarOpen } from "../redux/utils/utilsSlice";
 
 const NavBar = () => {
+  const dispatch = useDispatch();
   return (
     <div className=" h-14 fixed top-0 left-0 right-0 z-50">
-      <div className="px-4 py-2 flex justify-between items-center text-white bg-[#0f0f0f]" >
+      <div className="px-4 py-2 flex justify-between items-center text-white bg-[#0f0f0f]">
         <div className="flex space-x-4">
-          <IconButton>
+          <IconButton onClick={() => dispatch(setIsSideBarOpen())}>
             <MenuSvg />
           </IconButton>
 
