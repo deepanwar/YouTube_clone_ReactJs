@@ -8,15 +8,15 @@ import { setIsSideBarOpen } from "../redux/utils/utilsSlice";
 const videos = new Array(24).fill("mohan");
 const Feed = () => {
   const dispatch = useDispatch();
-  // const { data, isFetching } = useGetNewVideosQuery();
-  // console.log(data);
+  const { data, isFetching } = useGetNewVideosQuery();
+  console.log(data);
   useEffect(() => {
     dispatch(setIsSideBarOpen(true))
   }, []);
 
   return (
     <div className="relative ">
-      <div className="flex space-x-3 py-3 w-[82vw] overflow-x-scroll no-scrollbar fixed top-14 bg-[#0f0f0f] text-white">
+      <div className="flex space-x-3 py-3 w-[82vw] overflow-x-scroll no-scrollbar fixed top-14 bg-[#0f0f0f] text-white z-20">
         {videos.map((p, i) => (
           <p className="rounded-lg bg-neutral-800 px-3 py-1 text-sm" key={i}>
             {p}
@@ -26,13 +26,13 @@ const Feed = () => {
           <IoIosArrowForward />
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-4 flex-1 text-white pt-9">
-        {/* {data?.items?.map((video, i) => (
-          <VideoCard videoData={video} key={i} />
-        ))} */}
-        {videos?.map((video, i) => (
+      <div className="grid grid-cols-4 gap-4  flex-1 text-white pt-9">
+        {data?.items?.map((video, i) => (
           <VideoCard videoData={video} key={i} />
         ))}
+        {/* {videos?.map((video, i) => (
+          <VideoCard videoData={video} key={i} />
+        ))} */}
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // components
 import TimeAgo from "./TimeAgo";
 import IconButton from "./IconButton";
@@ -11,12 +11,16 @@ import { BsDot } from "react-icons/bs";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import WatchLaterBox from "./WatchLaterBox";
 
-const VideoCard = ({ videoData: { snippet }, flex, imgWidth }) => {
+const VideoCard = ({ videoData, flex, imgWidth }) => {
+  const navigate = useNavigate();
+
+  const { snippet } = videoData;
   // console.log(videoData);
   return (
-    <Link
-      to={`/video/${12} `}
-      className={`group/card relative flex gap-3 ${
+    <div
+      // to={`/video/${12} `}
+      onClick={() => navigate(`/video/${12} `)}
+      className={`group/card relative flex gap-3 mb-2 ${
         flex ? "flex-row" : "flex-col"
       }`}
     >
@@ -28,7 +32,7 @@ const VideoCard = ({ videoData: { snippet }, flex, imgWidth }) => {
           alt=""
         />
         <div className="absolute right-1 top-1 hidden group-hover/card:block">
-          <WatchLaterBox />
+          <WatchLaterBox videoData={videoData} />
         </div>
       </div>
       {/* <div className="bg-neutral-800 aspect-video rounded-lg"></div> */}
@@ -64,7 +68,7 @@ const VideoCard = ({ videoData: { snippet }, flex, imgWidth }) => {
           <DotsSvg />
         </IconButton>
       </div>
-    </Link>
+    </div>
   );
 };
 

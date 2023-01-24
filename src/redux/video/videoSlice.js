@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   videoList: [],
+  watchLater: [],
   selectedCategory: "Home",
   error: "",
   loading: false,
@@ -14,9 +15,11 @@ export const videoSlice = createSlice({
     changeCategory: (state, action) => {
       state.selectedCategory = action.payload;
     },
+    addToWatchLater: (state, action) => {
+      state.watchLater.push(action.payload);
+    },
   },
 });
 
-
-export const { changeCategory } = videoSlice.actions;
+export const { changeCategory, addToWatchLater } = videoSlice.actions;
 export default videoSlice.reducer;

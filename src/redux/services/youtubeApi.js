@@ -3,9 +3,13 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const youtubeApi = createApi({
   reducerPath: "youtubeApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_API,
+    baseUrl: "https://youtube-v31.p.rapidapi.com/",
+    tagTypes: ["Videos"],
     prepareHeaders: (headers) => {
-      headers.set("X-RapidAPI-Key", import.meta.env.VITE_API_KEY);
+      headers.set(
+        "X-RapidAPI-Key",
+        "1789510910msh041aa738115b761p165e07jsn7be783d25454"
+      );
       return headers;
     },
   }),
@@ -17,6 +21,5 @@ export const youtubeApi = createApi({
   }),
 });
 
-console.log(import.meta.env.VITE_API, import.meta.env.VITE_API_KEY);
 
 export const { useGetNewVideosQuery } = youtubeApi;

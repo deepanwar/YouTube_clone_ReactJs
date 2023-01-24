@@ -33,6 +33,10 @@ html {
   scrollbar-width: none;  /* Firefox */
 }
 
+.rounded-btn{
+  @apply rounded-full shrink-0 p-2 flex items-center justify-center space-x-2
+}
+
 /* @media screen and (max-width: 900px) {
   .category-btn {
     margin: 10px;

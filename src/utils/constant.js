@@ -33,10 +33,10 @@ export const explore = [
   { name: "Gym", icon: GymSvg },
 ];
 export const home = [
-  { name: "Home", icon: HomeSvg },
-  { name: "History", icon: HistorySvg },
-  { name: "Watch Later", icon: RxClock },
-  { name: "Likes", icon: AiOutlineLike },
+  { name: "Home", icon: HomeSvg, to: "/" },
+  { name: "History", icon: HistorySvg, to: "/history" },
+  { name: "Watch Later", icon: RxClock, to: "/watchLater" },
+  { name: "Likes", icon: AiOutlineLike, to: "/likes" },
 ];
 
 export const subscriptions = [
@@ -54,3 +54,5 @@ export const subscriptions = [
 //   "Build and Deploy 5 JavaScript & React API Projects in 10 Hours - Full Course | RapidAPI";
 export const demoSq =
   "http://dergipark.org.tr/assets/app/images/buddy_sample.png";
+
+export const fakeArray = new Array(24).fill("mohan");
