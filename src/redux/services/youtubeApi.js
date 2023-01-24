@@ -17,6 +17,4 @@ export const youtubeApi = createApi({
   }),
 });
 
-console.log(import.meta.env.VITE_API, import.meta.env.VITE_API_KEY);
-
 export const { useGetNewVideosQuery } = youtubeApi;
