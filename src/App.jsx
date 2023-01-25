@@ -1,7 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import { NavBar, SideBar } from "./layout";
-import { ChannelDetails, Feed, SearchFeed, VideoDetails } from "./screens";
-import WatchLater from "./screens/WatchLater";
+import {
+  ChannelDetails,
+  Explore,
+  Feed,
+  History,
+  Likes,
+  SearchFeed,
+  VideoDetails,
+  WatchLater,
+} from "./screens";
 
 function App() {
   return (
@@ -13,6 +21,8 @@ function App() {
           <Routes>
             <Route path="/" exact element={<Feed />} />
             <Route path="/history" element={<History />} />
+            <Route path="/explore/:term" element={<Explore />} />
+            <Route path="/likes" element={<Likes />} />
             <Route path="/watchLater" element={<WatchLater />} />
             <Route path="/video/:id" element={<VideoDetails />} />
             <Route path="/channel/:id" element={<ChannelDetails />} />

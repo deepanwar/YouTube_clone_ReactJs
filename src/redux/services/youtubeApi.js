@@ -15,7 +15,7 @@ export const youtubeApi = createApi({
   }),
   endpoints: (builder) => ({
     getNewVideos: builder.query({
-      query: (term = "New") =>
+      query: (term) =>
         `search?part=snippet&regionCode=IN&maxResults=50&q=${term}`,
     }),
   }),

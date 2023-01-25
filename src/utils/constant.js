@@ -20,30 +20,30 @@ import { AiOutlineLike } from "react-icons/ai";
 export const logo = "https://i.ibb.co/s9Qys2j/logo.png";
 
 export const explore = [
-  { name: "Trending", icon: TrendingSvg },
-  { name: "Music", icon: MusicSvg },
-  { name: "Films", icon: FilmSvg },
-  { name: "Live", icon: LiveSvg },
-  { name: "Gaming", icon: GamingSvg },
-  { name: "News", icon: NewsSvg },
-  { name: "Sport", icon: SportSvg },
-  { name: "Learning", icon: LearningSvg },
-  { name: "Podcast", icon: PodcastSvg },
-  { name: "Fashion & Beauty", icon: FashionSvg },
-  { name: "Gym", icon: GymSvg },
+  { name: "Trending", icon: TrendingSvg, to: "/explore/trending" },
+  { name: "Music", icon: MusicSvg, to: "/explore/music" },
+  { name: "Films", icon: FilmSvg, to: "/explore/films" },
+  { name: "Live", icon: LiveSvg, to: "/explore/live" },
+  { name: "Gaming", icon: GamingSvg, to: "/explore/gaming" },
+  { name: "News", icon: NewsSvg, to: "/explore/news" },
+  { name: "Sport", icon: SportSvg, to: "/explore/sport" },
+  { name: "Learning", icon: LearningSvg, to: "/explore/learning" },
+  { name: "Podcast", icon: PodcastSvg, to: "/explore/podcast" },
+  { name: "Fashion & Beauty", icon: FashionSvg, to: "/explore/fashion" },
+  { name: "Gym", icon: GymSvg, to: "/explore/gym" },
 ];
 export const home = [
   { name: "Home", icon: HomeSvg, to: "/" },
   { name: "History", icon: HistorySvg, to: "/history" },
   { name: "Watch Later", icon: RxClock, to: "/watchLater" },
-  { name: "Likes", icon: AiOutlineLike, to: "/likes" },
+  { name: "Liked Videos", icon: AiOutlineLike, to: "/likes" },
 ];
 
 export const subscriptions = [
-  { name: "Code Evolution" },
-  { name: "Web Dev Jukkie" },
-  { name: "freecodecamp" },
-  { name: "Web Dev Simplified" },
+  { name: "Code Evolution", to: "/channel/1" },
+  { name: "Web Dev Jukkie", to: "/channel/2" },
+  { name: "freecodecamp", to: "/channel/3" },
+  { name: "Web Dev Simplified", to: "/channel/4" },
 ];
 
 // export { default as demoVideo } from "../assets/";
@@ -56,3 +56,20 @@ export const demoSq =
   "http://dergipark.org.tr/assets/app/images/buddy_sample.png";
 
 export const fakeArray = new Array(24).fill("mohan");
+
+export const terms = [
+  { name: "New" },
+  { name: "Music" },
+  { name: "Gaming" },
+  { name: "Computer Science" },
+  { name: "Superhero movies" },
+  { name: "Trailers" },
+  { name: "Editing" },
+  { name: "Phones" },
+  { name: "Comedy" },
+  { name: "Laptops" },
+  { name: "Dancing" },
+  { name: "Photoshop" },
+  { name: "Super Cars" },
+  { name: "Game shows" },
+];
