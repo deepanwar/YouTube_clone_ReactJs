@@ -3,7 +3,6 @@ import { BsPlusCircle } from "react-icons/bs";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useSelector } from "react-redux";
 import { explore, home, subscriptions } from "../utils/constant";
-import CategoryList from "./components/CategoryList";
 import ListItem from "./components/ListItem";
 
 const SideBar = () => {
